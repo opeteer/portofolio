@@ -61,7 +61,7 @@ jobs:
             echo "Update berhasil dieksekusi!"
 
             echo "Menunggu Cloudflare membuat tunnel (5 detik)..."
-            sleep 5
+            sleep 19
 
             echo "=========================================================="
             echo "URL Akses Portofolio Web:"
