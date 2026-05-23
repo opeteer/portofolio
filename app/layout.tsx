@@ -18,17 +18,16 @@ const silkscreen = Silkscreen({
 const geistPixelLine = GeistPixelLine
 
 export const metadata: Metadata = {
-  title: "Monochrome ASCII Hub | Raw Logic. Refined Form.",
+  title: "Gerardo M Ardianta | DevOps Engineer Portfolio",
   description:
-    "A minimalist, front-end only technical showcase utilizing a black and white aesthetic, pixel typography, and ASCII-based animations across eight distinct tech-focused sections.",
-  generator: "v0.app",
+    "The professional portfolio of Gerardo M Ardianta, an aspiring DevOps Engineer specializing in Linux System Administration, Cloud Infrastructure, Docker containerization, and CI/CD pipelines.",
   keywords: [
-    "ASCII art",
-    "monochrome",
-    "frontend",
-    "engineering",
-    "showcase",
-    "developer",
+    "Gerardo M Ardianta",
+    "DevOps",
+    "Cloud Infrastructure",
+    "Linux",
+    "Docker",
+    "CI/CD",
     "portfolio",
   ],
   icons: {
