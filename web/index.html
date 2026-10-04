@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerardo M Ardianta (@opeteer) — Cloud-Native & Systems Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              cyan: '#00f2fe',
+              blue: '#4facfe',
+              emerald: '#10b981',
+              dark: '#090d16',
+              card: '#0f172a',
+              border: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    pre.ascii-art {
+      font-family: "Fira Code", monospace;
+      line-height: 1.15;
+      letter-spacing: -0.05em;
+      white-space: pre;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 35px -5px rgba(0, 242, 254, 0.25);
+    }
+    .glow-card:hover {
+      box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#090d16] text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#090d16]/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="inline-block w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+        <a href="#" class="font-mono font-bold text-lg text-white hover:text-cyan-400 transition-colors">
+          opeteer<span class="text-cyan-400">::cli-web</span>
+        </a>
+        <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-400 border border-slate-700">Go 1.26 net/http</span>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#emblem" class="text-slate-400 hover:text-cyan-400 transition-colors">Emblem</a>
+        <a href="#flagship" class="text-slate-400 hover:text-cyan-400 transition-colors">Flagship</a>
+        <a href="#projects" class="text-slate-400 hover:text-cyan-400 transition-colors">31 Projects</a>
+        <a href="#architecture" class="text-slate-400 hover:text-cyan-400 transition-colors">Architecture</a>
+        <a href="#terminal" class="text-slate-400 hover:text-cyan-400 transition-colors">Web Terminal</a>
+        <a href="#api" class="text-slate-400 hover:text-cyan-400 transition-colors">REST API</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/opeteer" target="_blank" class="text-xs font-mono px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 transition-all flex items-center space-x-1.5">
+          <span>GitHub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Integrated ASCII Art Emblem -->
+  <section id="emblem" class="relative pt-12 pb-20 overflow-hidden border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Bio & Highlights -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>All systems nominal • Ready for Cloud & Systems Engineering</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Gerardo M Ardianta
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-3xl sm:text-4xl mt-1">
+              Software & Cloud-Native Engineer
+            </span>
+          </h1>
+
+          <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+            Crafting resilient distributed systems, container orchestration pipelines, high-performance backends in <strong class="text-slate-200">Golang</strong> & <strong class="text-slate-200">Python</strong>, and ad-hoc disaster recovery architectures.
+          </p>
+
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-cyan-300 border border-slate-700">Kubernetes & GitOps</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700">Golang Concurrency</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-indigo-300 border border-slate-700">Docker & Vagrant</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700">Tailscale & FRP Mesh</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-yellow-300 border border-slate-700">FIT Competition 2026</span>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#projects" class="px-5 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20">
+              Browse 31 Projects
+            </a>
+            <a href="#terminal" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-mono text-sm border border-slate-700 transition-all">
+              Launch Terminal
+            </a>
+            <a href="mailto:gmayella245@gmail.com" class="text-sm text-slate-400 hover:text-cyan-400 underline underline-offset-4 font-mono transition-colors">
+              gmayella245@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Official ASCII Art Emblem Terminal Card -->
+        <div class="lg:col-span-6">
+          <div class="relative rounded-2xl bg-slate-900 border border-cyan-500/30 glow-cyan p-5 overflow-hidden">
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 text-xs font-mono">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                <span class="ml-2 text-slate-400 font-semibold">emblem.ascii — showtime</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button id="btn-braille" onclick="setStyle('braille')" class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-[11px] transition-all">Braille (HD)</button>
+                <button id="btn-block" onclick="setStyle('block')" class="px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 text-[11px] transition-all">Block (Retro)</button>
+              </div>
+            </div>
+
+            <!-- ASCII Art Viewport -->
+            <div class="bg-black/60 rounded-xl p-3 overflow-x-auto flex justify-center items-center min-h-[360px]">
+              <pre id="ascii-viewport" class="ascii-art text-cyan-400 text-[9px] sm:text-[11px] leading-[1.05] transition-all duration-300"></pre>
+            </div>
+
+            <!-- Emblem Caption -->
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-center">
+              <p class="font-mono text-xs text-slate-300 font-medium">Official Opeteer Falcon Emblem</p>
+              <p class="text-[11px] text-slate-500 italic mt-0.5">"A reminder of speed, precision, and resilient flight under pressure"</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship Engineering Showcase -->
+  <section id="flagship" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Selected Works</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Flagship Engineering Showcase</h2>
+        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+          Curated major implementations spanning Disaster Recovery Systems, High-Performance Go, Kubernetes Infrastructure, and Hybrid Cloud Game Servers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="flagship-cards">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 31 Public Repositories Explorer -->
+  <section id="projects" class="py-20 border-b border-slate-800/80 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Codebase Index</span>
+          <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Public Repositories (<span id="repo-count">31</span>)</h2>
+          <p class="text-slate-400 text-sm mt-1">Filter by domain or search across languages and descriptions.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="w-full md:w-72">
+          <input type="text" id="search-input" placeholder="Search by name, lang, keyword..." 
+                 class="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono focus:outline-none focus:border-cyan-500 transition-colors">
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mb-8" id="category-tabs">
+        <button onclick="filterCategory('all')" class="cat-btn active px-3.5 py-1.5 rounded-lg text-xs font-mono bg-cyan-500 text-black font-semibold transition-all">All (31)</button>
+        <button onclick="filterCategory('devops')" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all">Cloud & DevOps (9)</button>
+        <button onclick="filterCategory('systems')" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all">Systems & Go (5)</button>
+        <button onclick="filterCategory('web')" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all">Web Ecosystems (7)</button>
+        <button onclick="filterCategory('mobile')" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all">Mobile (3)</button>
+        <button onclick="filterCategory('academic')" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all">Academic (5)</button>
+        <button onclick="filterCategory('ai')" class="cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all">AI & Vision (1)</button>
+      </div>
+
+      <!-- Repositories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="all-repos-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Visualizer -->
+  <section id="architecture" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">System Topologies</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Infrastructure & Cloud Architectures</h2>
+        <p class="text-slate-400 text-sm mt-2">Declarative blueprints designed for high-availability, zero-port-forwarding, and fault tolerance.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Architecture 1: zomboid-server -->
+        <div class="rounded-xl bg-slate-900 border border-slate-800 p-6 glow-card transition-all">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+            <h3 class="text-base font-bold text-white flex items-center space-x-2">
+              <span class="text-cyan-400 font-mono">01.</span>
+              <span>zomboid-server Hybrid Cloud Gateway</span>
+            </h3>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">Vagrant + FRP + Azure</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">
+            A dedicated server infrastructure bypassing CGNAT/firewalls without port-forwarding by tunneling local Docker containers through an Azure FRP reverse proxy.
+          </p>
+          <pre class="bg-black/80 rounded-lg p-4 font-mono text-[11px] text-cyan-300 leading-tight overflow-x-auto border border-slate-800/80">[Client (Internet)] ──► [Azure FRPS Gateway: UDP 16261/16262]
+                              │ (Secure FRP Reverse Tunnel)
+                              ▼
+┌────────────────────────────────────────────────────────┐
+│ Local Host: Windows Virtualization                      │
+│   Vagrant VM (Ubuntu Focal64)                          │
+│     Docker Compose:                                    │
+│       ├── FRP Client (frpc) ◄──► Azure FRPS            │
+│       └── Project Zomboid (LinuxGSM)                   │
+└────────────────────────────────────────────────────────┘</pre>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-400 font-mono">
+            <li>• Complete IP Masking & DDoS mitigation via Azure public IP</li>
+            <li>• Zero router port-forwarding or static ISP IP required</li>
+            <li>• Zero cloud hosting hardware cost (runs on local metal)</li>
+          </ul>
+        </div>
+
+        <!-- Architecture 2: infra-for-kube -->
+        <div class="rounded-xl bg-slate-900 border border-slate-800 p-6 glow-card transition-all">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+            <h3 class="text-base font-bold text-white flex items-center space-x-2">
+              <span class="text-cyan-400 font-mono">02.</span>
+              <span>Kubernetes Ingress & Observability Topology</span>
+            </h3>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">infra-for-kube</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">
+            Production-grade declarative routing with NGINX Ingress Controller, Pod auto-scaling, and Prometheus telemetry integration.
+          </p>
+          <pre class="bg-black/80 rounded-lg p-4 font-mono text-[11px] text-emerald-300 leading-tight overflow-x-auto border border-slate-800/80">[Public Traffic / Internet]
+       │
+       ▼
+┌────────────────────────────────────────────────────────┐
+│ NGINX Ingress Controller                               │
+│   ├── /api      ──► [Backend Service]   (ClusterIP)    │
+│   │                   └── [Backend Pods x3]            │
+│   ├── /         ──► [Frontend Service]  (ClusterIP)    │
+│   │                   └── [Web App Pods x2]            │
+│   └── /metrics  ──► [Prometheus Monitoring Service]    │
+└────────────────────────────────────────────────────────┘</pre>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-400 font-mono">
+            <li>• Declarative Manifests (Ingress, Service, Deployment)</li>
+            <li>• Integrated monitoring application stack</li>
+            <li>• GitOps ready self-healing configuration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Web Terminal Playground -->
+  <section id="terminal" class="py-20 border-b border-slate-800/80 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Interactive Console</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Live Web Terminal Sandbox</h2>
+        <p class="text-slate-400 text-sm mt-1">Execute opeteer CLI commands directly in your browser.</p>
+      </div>
+
+      <div class="rounded-2xl bg-black border border-cyan-500/40 shadow-2xl overflow-hidden font-mono text-xs">
+        <!-- Terminal Header -->
+        <div class="bg-slate-900 px-4 py-2.5 flex items-center justify-between border-b border-slate-800">
+          <div class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+            <span class="text-slate-400 ml-2 font-semibold">guest@opeteer-workstation:~</span>
+          </div>
+          <div class="text-[11px] text-slate-500 hidden sm:block">
+            Connected to Go HTTP daemon on :8081
+          </div>
+        </div>
+
+        <!-- Terminal Output Area -->
+        <div id="term-output" class="p-4 sm:p-6 space-y-3 min-h-[300px] max-h-[460px] overflow-y-auto text-slate-300">
+          <div class="text-cyan-400 font-semibold">Welcome to the interactive Opeteer CLI terminal session.</div>
+          <div class="text-slate-400">Type <span class="text-yellow-300 font-bold">help</span> to list commands, or try clicking a quick-command below:</div>
+          <div class="flex flex-wrap gap-2 pt-1 pb-3">
+            <button onclick="runTermCmd('showtime')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-[11px]">showtime</button>
+            <button onclick="runTermCmd('flagship')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-[11px]">flagship</button>
+            <button onclick="runTermCmd('skills')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-[11px]">skills</button>
+            <button onclick="runTermCmd('stats')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-[11px]">stats</button>
+            <button onclick="runTermCmd('contact')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-[11px]">contact</button>
+          </div>
+        </div>
+
+        <!-- Terminal Input Line -->
+        <div class="bg-slate-900/90 px-4 py-3 border-t border-slate-800 flex items-center space-x-2">
+          <span class="text-cyan-400 font-bold">opeteer $</span>
+          <input type="text" id="term-input" placeholder="Type a command (e.g. showtime, flagship, skills, help)..." 
+                 class="w-full bg-transparent text-white font-mono text-xs focus:outline-none placeholder-slate-600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live REST API Explorer -->
+  <section id="api" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Backend Services</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Live REST API Endpoints</h2>
+        <p class="text-slate-400 text-sm mt-2">These endpoints are live and actively served by this Go binary executable on port 8081.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/api/profile" target="_blank" class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all block group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono text-xs font-bold">GET</span>
+            <span class="text-xs text-slate-500 group-hover:text-cyan-400 font-mono">Test ↗</span>
+          </div>
+          <div class="font-mono text-sm text-white font-semibold group-hover:text-cyan-400 transition-colors">/api/profile</div>
+          <p class="text-xs text-slate-400 mt-1.5">Returns developer biography, status, email, and social links in JSON format.</p>
+        </a>
+
+        <a href="/api/projects" target="_blank" class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all block group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono text-xs font-bold">GET</span>
+            <span class="text-xs text-slate-500 group-hover:text-cyan-400 font-mono">Test ↗</span>
+          </div>
+          <div class="font-mono text-sm text-white font-semibold group-hover:text-cyan-400 transition-colors">/api/projects</div>
+          <p class="text-xs text-slate-400 mt-1.5">Returns array of all 31 public repositories with language and metadata.</p>
+        </a>
+
+        <a href="/api/projects/flagship" target="_blank" class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all block group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono text-xs font-bold">GET</span>
+            <span class="text-xs text-slate-500 group-hover:text-cyan-400 font-mono">Test ↗</span>
+          </div>
+          <div class="font-mono text-sm text-white font-semibold group-hover:text-cyan-400 transition-colors">/api/projects/flagship</div>
+          <p class="text-xs text-slate-400 mt-1.5">Returns the 7 flagship showcases with detailed architecture highlights.</p>
+        </a>
+
+        <a href="/api/skills" target="_blank" class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all block group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono text-xs font-bold">GET</span>
+            <span class="text-xs text-slate-500 group-hover:text-cyan-400 font-mono">Test ↗</span>
+          </div>
+          <div class="font-mono text-sm text-white font-semibold group-hover:text-cyan-400 transition-colors">/api/skills</div>
+          <p class="text-xs text-slate-400 mt-1.5">Returns categorized matrix of technical skills, cloud tooling, and stacks.</p>
+        </a>
+
+        <a href="/api/showtime" target="_blank" class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all block group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono text-xs font-bold">GET</span>
+            <span class="text-xs text-slate-500 group-hover:text-cyan-400 font-mono">Test ↗</span>
+          </div>
+          <div class="font-mono text-sm text-white font-semibold group-hover:text-cyan-400 transition-colors">/api/showtime</div>
+          <p class="text-xs text-slate-400 mt-1.5">Returns raw ASCII art strings for both Braille and Block emblem styles.</p>
+        </a>
+
+        <a href="/healthz" target="_blank" class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all block group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono text-xs font-bold">GET</span>
+            <span class="text-xs text-slate-500 group-hover:text-cyan-400 font-mono">Test ↗</span>
+          </div>
+          <div class="font-mono text-sm text-white font-semibold group-hover:text-cyan-400 transition-colors">/healthz</div>
+          <p class="text-xs text-slate-400 mt-1.5">Kubernetes liveness and readiness probe endpoint returning 200 OK.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-center sm:text-left">
+        <p class="text-sm font-semibold text-white">Gerardo M Ardianta (@opeteer)</p>
+        <p class="text-xs text-slate-400 mt-0.5">Yogyakarta, Indonesia • <a href="mailto:gmayella245@gmail.com" class="text-cyan-400 hover:underline">gmayella245@gmail.com</a></p>
+      </div>
+
+      <div class="text-xs font-mono text-slate-500">
+        Single-Binary Go Web Server • <a href="https://github.com/opeteer/portofolio" target="_blank" class="text-slate-400 hover:text-white underline">opeteer/portofolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Client-Side Engine -->
+  <script>
+    let currentStyle = 'braille';
+    let cachedArt = { braille: '', block: '' };
+    let allRepos = [];
+    let currentCategory = 'all';
+
+    // Fetch live data from Go backend
+    async function initApp() {
+      try {
+        // Fetch ASCII art emblem
+        const artRes = await fetch('/api/showtime');
+        cachedArt = await artRes.json();
+        updateAscii();
+
+        // Fetch Flagship projects
+        const flagRes = await fetch('/api/projects/flagship');
+        const flagships = await flagRes.json();
+        renderFlagship(flagships);
+
+        // Fetch All projects
+        const allRes = await fetch('/api/projects');
+        allRepos = await allRes.json();
+        renderRepos(allRepos);
+
+        document.getElementById('repo-count').textContent = allRepos.length;
+      } catch (err) {
+        console.error('Error loading data from Go backend:', err);
+      }
+    }
+
+    function setStyle(style) {
+      currentStyle = style;
+      const btnBraille = document.getElementById('btn-braille');
+      const btnBlock = document.getElementById('btn-block');
+      if (style === 'braille') {
+        btnBraille.className = 'px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-[11px] transition-all';
+        btnBlock.className = 'px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 text-[11px] transition-all';
+      } else {
+        btnBlock.className = 'px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-[11px] transition-all';
+        btnBraille.className = 'px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 text-[11px] transition-all';
+      }
+      updateAscii();
+    }
+
+    function updateAscii() {
+      const el = document.getElementById('ascii-viewport');
+      el.textContent = currentStyle === 'braille' ? cachedArt.braille : cachedArt.block;
+    }
+
+    function renderFlagship(list) {
+      const container = document.getElementById('flagship-cards');
+      container.innerHTML = list.map((p, idx) => `
+        <div class="rounded-xl bg-slate-900 border border-slate-800 p-6 glow-card transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Flagship 0${idx + 1}</span>
+              <span class="text-xs font-mono text-slate-500">${p.language}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 hover:text-cyan-400 transition-colors">
+              <a href="${p.url}" target="_blank">${p.name}</a>
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">${p.description}</p>
+            
+            ${p.tech_stack ? `
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                ${p.tech_stack.map(t => `<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-slate-300">${t}</span>`).join('')}
+              </div>
+            ` : ''}
+
+            ${p.highlights ? `
+              <ul class="space-y-1 text-xs text-slate-400 mb-4">
+                ${p.highlights.map(h => `<li class="flex items-start space-x-1.5"><span class="text-cyan-400">•</span><span>${h}</span></li>`).join('')}
+              </ul>
+            ` : ''}
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">${p.size_kb} KB</span>
+            <a href="${p.url}" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+              <span>View Code</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderRepos(list) {
+      const container = document.getElementById('all-repos-grid');
+      if (list.length === 0) {
+        container.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-500 font-mono text-sm">No repositories found matching your query.</div>`;
+        return;
+      }
+      container.innerHTML = list.map(p => `
+        <div class="rounded-xl bg-slate-900/80 border border-slate-800/80 p-5 hover:border-slate-700 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-mono text-cyan-400 font-semibold">${p.category}</span>
+              <span class="text-[11px] font-mono text-slate-500">${p.language || 'Config'}</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1.5 flex items-center space-x-1.5">
+              <a href="${p.url}" target="_blank" class="hover:text-cyan-400 transition-colors">${p.name}</a>
+              ${p.flagship ? '<span class="text-cyan-400 text-[10px] font-mono border border-cyan-500/30 px-1 rounded" title="Flagship">FLAGSHIP</span>' : ''}
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">${p.description || '(No description)'}</p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono text-slate-500">
+            <span>${p.size_kb} KB</span>
+            <a href="${p.url}" target="_blank" class="text-slate-400 hover:text-white transition-colors">GitHub ↗</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.className = 'cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all';
+      });
+      event.target.className = 'cat-btn active px-3.5 py-1.5 rounded-lg text-xs font-mono bg-cyan-500 text-black font-semibold transition-all';
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      let filtered = allRepos;
+
+      if (currentCategory !== 'all') {
+        filtered = filtered.filter(p => p.category.toLowerCase().includes(currentCategory));
+      }
+
+      if (query) {
+        filtered = filtered.filter(p => 
+          p.name.toLowerCase().includes(query) || 
+          p.description.toLowerCase().includes(query) ||
+          p.language.toLowerCase().includes(query)
+        );
+      }
+
+      renderRepos(filtered);
+    }
+
+    document.getElementById('search-input').addEventListener('input', applyFilters);
+
+    // Interactive Terminal Logic
+    const termInput = document.getElementById('term-input');
+    const termOutput = document.getElementById('term-output');
+
+    termInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = termInput.value.trim();
+        if (cmd) {
+          runTermCmd(cmd);
+          termInput.value = '';
+        }
+      }
+    });
+
+    async function runTermCmd(cmd) {
+      printTermLine(`$ opeteer ${cmd}`, 'text-cyan-400 font-bold');
+
+      const parts = cmd.toLowerCase().split(' ');
+      const action = parts[0];
+
+      switch(action) {
+        case 'help':
+          printTermLine(`Available commands:
+  showtime     Display official ASCII art emblem
+  flagship     View flagship engineering projects
+  projects     List all 31 repositories
+  skills       View technical skills and stack
+  stats        View repository statistics
+  contact      Display contact details
+  clear        Clear the terminal screen`, 'text-slate-300');
+          break;
+
+        case 'showtime':
+        case 'logo':
+        case 'art':
+          printTermLine(cachedArt.braille, 'text-cyan-300 font-mono text-[9px] leading-[1.05]');
+          break;
+
+        case 'contact':
+          printTermLine(`Email: gmayella245@gmail.com\nGitHub: https://github.com/opeteer\nLocation: Yogyakarta, Indonesia\nStatus: Available for Cloud & Systems Opportunities`, 'text-green-300');
+          break;
+
+        case 'stats':
+          const statsRes = await fetch('/api/stats');
+          const statsData = await statsRes.json();
+          printTermLine(`Total Repositories : ${statsData.total_repos}\nFlagship Projects  : ${statsData.flagship_count}\nTotal Code Size    : ${statsData.total_size_kb} KB\nPrimary Stack      : ${statsData.primary_language}`, 'text-yellow-300');
+          break;
+
+        case 'skills':
+          const skillsRes = await fetch('/api/skills');
+          const skills = await skillsRes.json();
+          let skillsText = '';
+          skills.forEach(s => {
+            skillsText += `[${s.domain}]\n  • ${s.skills.join('\n  • ')}\n\n`;
+          });
+          printTermLine(skillsText, 'text-blue-300');
+          break;
+
+        case 'flagship':
+          const flagRes = await fetch('/api/projects/flagship');
+          const flags = await flagRes.json();
+          let flagText = '';
+          flags.forEach((f, i) => {
+            flagText += `${i+1}. ${f.name} [${f.language}]\n   ${f.description}\n\n`;
+          });
+          printTermLine(flagText, 'text-slate-300');
+          break;
+
+        case 'clear':
+          termOutput.innerHTML = '';
+          break;
+
+        default:
+          printTermLine(`Unknown command: '${cmd}'. Type 'help' for available commands.`, 'text-red-400');
+      }
+
+      termOutput.scrollTop = termOutput.scrollHeight;
+    }
+
+    function printTermLine(text, className) {
+      const line = document.createElement('div');
+      line.className = `${className} whitespace-pre-wrap`;
+      line.textContent = text;
+      termOutput.appendChild(line);
+      termOutput.scrollTop = termOutput.scrollHeight;
+    }
+
+    // Initialize on DOM load
+    window.addEventListener('DOMContentLoaded', initApp);
+  </script>
+</body>
+</html>

@@ -94,6 +94,18 @@ func PrintHelp(topic string) {
 	case "showtime", "showcase", "logo", "art", "emblem":
 		PrintShowtimeHelp()
 		return
+
+	case "serve", "web", "server", "daemon":
+		PrintServeHelp()
+		return
+
+	case "live", "telemetry", "probe":
+		PrintLiveHelp()
+		return
+
+	case "bench", "benchmark", "speed":
+		PrintBenchHelp()
+		return
 	}
 
 	// Default main help
@@ -104,6 +116,9 @@ func PrintHelp(topic string) {
 	fmt.Println("  opeteer [flags]")
 	fmt.Println()
 	fmt.Println(ui.Bold("CORE COMMANDS:"))
+	fmt.Printf("  %s %s\n", ui.BrightCyan(fmt.Sprintf("%-16s", "bench")), "Benchmark CPU crypto, memory GC, and engine throughput (aliases: benchmark)")
+	fmt.Printf("  %s %s\n", ui.BrightCyan(fmt.Sprintf("%-16s", "live")), "Probe real-time network latency & live GitHub activity (aliases: probe)")
+	fmt.Printf("  %s %s\n", ui.BrightCyan(fmt.Sprintf("%-16s", "serve")), "Launch embedded Go HTTP web server on :8081 (aliases: web)")
 	fmt.Printf("  %s %s\n", ui.BrightCyan(fmt.Sprintf("%-16s", "showtime")), "Display high-res ASCII Art emblem & logo (aliases: logo, art)")
 	fmt.Printf("  %s %s\n", ui.BrightCyan(fmt.Sprintf("%-16s", "about")), "Display bio, background, and engineering focus (aliases: bio, info)")
 	fmt.Printf("  %s %s\n", ui.BrightCyan(fmt.Sprintf("%-16s", "flagship")), "Showcase top flagship engineering projects (aliases: featured)")
@@ -151,8 +166,11 @@ func RunInteractive() {
 		fmt.Println("  " + ui.BrightCyan("7)") + " Contact & Availability")
 		fmt.Println("  " + ui.BrightCyan("8)") + " Inspect a Specific Project")
 		fmt.Println("  " + ui.BrightCyan("9)") + " View Official ASCII Art Emblem (Showtime)")
+		fmt.Println("  " + ui.BrightCyan("b)") + " Systems Micro-Benchmark Suite (CPU, Memory, Engine)")
+		fmt.Println("  " + ui.BrightCyan("l)") + " Live GitHub Network Probe & Activity Telemetry")
+		fmt.Println("  " + ui.BrightCyan("w)") + " Launch Embedded Web Portfolio Server (:8081)")
 		fmt.Println("  " + ui.BrightCyan("q)") + " Exit")
-		fmt.Print(ui.Bold("\nChoose an option [1-9, q]: "))
+		fmt.Print(ui.Bold("\nChoose an option [1-9, b, l, w, q]: "))
 
 		if !scanner.Scan() {
 			break
@@ -186,11 +204,17 @@ func RunInteractive() {
 			}
 		case "9", "showtime", "showcase", "logo", "art":
 			RunShowtime(ShowtimeOptions{Style: "braille", Color: "cyan"}, false)
+		case "b", "bench", "benchmark", "speed":
+			RunBench([]string{})
+		case "l", "live", "telemetry", "probe":
+			RunLive([]string{})
+		case "w", "serve", "web", "server":
+			RunServe([]string{})
 		case "q", "exit", "quit":
 			fmt.Println(ui.BrightGreen("Thank you for visiting! Have a great day."))
 			return
 		default:
-			fmt.Println(ui.Red("Invalid selection. Please choose 1-9 or q."))
+			fmt.Println(ui.Red("Invalid selection. Please choose 1-9, b, l, w, or q."))
 		}
 
 		fmt.Println(ui.Dim("Press Enter to continue..."))
@@ -294,6 +318,15 @@ func Execute(args []string) {
 
 	case "status", "ping":
 		RunStatus(jsonOutput)
+
+	case "serve", "web", "server", "daemon":
+		RunServe(args)
+
+	case "live", "telemetry", "probe":
+		RunLive(args)
+
+	case "bench", "benchmark", "speed":
+		RunBench(args)
 
 	case "flagship", "featured":
 		RunFlagship(jsonOutput)

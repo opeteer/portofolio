@@ -21,9 +21,17 @@ clean:
 	rm -f $(BINARY_NAME)
 
 test: build
+	@echo "Running Go unit tests..."
+	go test -v ./...
 	@echo "Verifying CLI commands..."
 	./$(BINARY_NAME) --version
 	./$(BINARY_NAME) about
 	./$(BINARY_NAME) flagship
+	./$(BINARY_NAME) showtime
 	./$(BINARY_NAME) skills
 	./$(BINARY_NAME) stats
+	./$(BINARY_NAME) live --limit 2
+	./$(BINARY_NAME) bench --target cpu --duration 300ms
+	./$(BINARY_NAME) help live
+	./$(BINARY_NAME) help bench
+	./$(BINARY_NAME) help serve

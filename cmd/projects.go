@@ -75,9 +75,9 @@ func RunProjects(filter ProjectFilter, jsonOutput bool) {
 	for i, p := range filtered {
 		var paddedName string
 		if p.Flagship {
-			paddedName = ui.BrightCyan(fmt.Sprintf("%-26s ★", p.Name))
+			paddedName = ui.BrightCyan(fmt.Sprintf("%-26s [flagship]", p.Name))
 		} else {
-			paddedName = ui.White(fmt.Sprintf("%-28s", p.Name))
+			paddedName = ui.White(fmt.Sprintf("%-37s", p.Name))
 		}
 
 		desc := p.Description
@@ -97,7 +97,7 @@ func RunProjects(filter ProjectFilter, jsonOutput bool) {
 		)
 	}
 	fmt.Println()
-	fmt.Println(ui.Dim("★ Indicates flagship project. Run 'opeteer project <name>' to view full details."))
+	fmt.Println(ui.Dim("[flagship] Indicates flagship project. Run 'opeteer project <name>' to view full details."))
 	fmt.Println()
 }
 
@@ -132,7 +132,7 @@ func RunInspectProject(name string, jsonOutput bool) {
 	fmt.Printf("  %s: %d KB\n", ui.Bold(fmt.Sprintf("%-14s", "Size")), p.SizeKB)
 	fmt.Printf("  %s: %s\n", ui.Bold(fmt.Sprintf("%-14s", "Last Updated")), p.Updated)
 	if p.Flagship {
-		fmt.Printf("  %s: %s\n", ui.Bold(fmt.Sprintf("%-14s", "Status")), ui.BrightGreen("Flagship Engineering Showcase ★"))
+		fmt.Printf("  %s: %s\n", ui.Bold(fmt.Sprintf("%-14s", "Status")), ui.BrightGreen("Flagship Engineering Showcase"))
 	}
 	fmt.Println()
 

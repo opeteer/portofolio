@@ -4,7 +4,7 @@
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Build Locally
 ```bash
@@ -18,13 +18,16 @@ make build
 ./opeteer
 
 # Or run subcommands directly:
-./opeteer showtime
-./opeteer about
-./opeteer flagship
-./opeteer skills
-./opeteer infra
-./opeteer stats
-./opeteer contact
+./opeteer bench              # Real-time systems micro-benchmark (CPU, Mem, Engine)
+./opeteer live               # Real-time GitHub API latency & telemetry (non-mock)
+./opeteer serve              # Launches embedded Web UI on http://localhost:8081
+./opeteer showtime           # Displays high-res ASCII Art emblem
+./opeteer about              # View bio & engineering focus
+./opeteer flagship           # Deep showcase of flagship projects
+./opeteer skills             # View technical skills & tooling
+./opeteer infra              # ASCII architecture diagrams
+./opeteer stats              # View repository metrics
+./opeteer contact            # Contact info & social links
 ```
 
 ### 3. Install to PATH (Run anywhere)
@@ -36,11 +39,14 @@ Once installed, simply run `opeteer` from any terminal directory.
 
 ---
 
-## 📖 Available Commands
+## Available Commands
 
 | Command | Aliases | Description |
 | :--- | :--- | :--- |
 | `opeteer` | `menu`, `interactive` | Launches interactive menu with ASCII banner |
+| `opeteer bench` | `benchmark`, `speed` | Systems micro-benchmark (CPU crypto, Memory GC, HTTP Engine) |
+| `opeteer live` | `telemetry`, `probe` | Real-time live network latency probe & GitHub telemetry |
+| `opeteer serve` | `web`, `server` | Launches embedded Go HTTP web server on port **8081** |
 | `opeteer showtime` | `logo`, `art` | Displays high-definition ASCII Art emblem & signature card |
 | `opeteer about` | `bio`, `info` | View developer background, mission, and technical focus |
 | `opeteer flagship` | `featured` | Deep showcase of flagship projects (PANDORA, hornetzDrive, etc.) |
@@ -54,7 +60,7 @@ Once installed, simply run `opeteer` from any terminal directory.
 
 ---
 
-## 🛠️ Flags & Filtering Examples
+## Flags & Filtering Examples
 
 ### Filter Repositories by Category:
 ```bash
@@ -76,9 +82,26 @@ Once installed, simply run `opeteer` from any terminal directory.
 
 ### Machine-Readable JSON Output (for scripts / `jq`):
 ```bash
+./opeteer live --json | jq .probe
 ./opeteer projects --json | jq '.[].name'
 ./opeteer skills --json
 ./opeteer stats --json
+```
+
+### Live Diagnostics & Telemetry:
+```bash
+./opeteer live
+./opeteer live --limit 3
+./opeteer live --timeout 2
+```
+
+### Systems Micro-Benchmarking:
+```bash
+./opeteer bench                           # Run full suite (CPU, Mem, Engine)
+./opeteer bench --target cpu --duration 2s # Cryptographic SHA-256 stress
+./opeteer bench --target mem              # Allocator & GC throughput
+./opeteer bench --target engine           # HTTP router & JSON RPS test
+./opeteer bench --json | jq .score_rating
 ```
 
 ### Subcommand Help:
