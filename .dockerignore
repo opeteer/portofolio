@@ -1,0 +1,8 @@
+.git
+.github
+template-web
+web/node_modules
+web/.next
+bin
+dist
+*.log
