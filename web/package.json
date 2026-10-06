@@ -15,9 +15,9 @@
   "scripts": {
     "analyze": "next experimental-analyze",
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev -p 8100",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start -p 8100"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

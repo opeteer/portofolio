@@ -8,11 +8,11 @@ services:
     container_name: opeteer-web
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "8100:8100"
     environment:
       - NODE_ENV=production
-      - PORT=3000
-      - NEXT_PUBLIC_SITE_URL=http://localhost:3000
+      - PORT=8100
+      - NEXT_PUBLIC_SITE_URL=http://localhost:8100
     depends_on:
       - cli-server
 
