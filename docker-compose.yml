@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: opeteer-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - NEXT_PUBLIC_SITE_URL=http://localhost:3000
+    depends_on:
+      - cli-server
+
+  cli-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.cli
+    container_name: opeteer-cli-server
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      - PORT=8081
