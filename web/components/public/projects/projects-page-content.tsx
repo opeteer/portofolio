@@ -5,21 +5,21 @@ import { cn } from "@/lib/utils"
 import { Github, Star, GitFork, ExternalLink, Sparkles, Search, Filter } from "lucide-react"
 import { Input } from "@/components/ui/input"
 
-import { portfolioProjects } from "@/lib/projects-data"
+import { realProjects } from "@/lib/projects-data"
 
-const projects = portfolioProjects.map((p) => ({
+const projects = realProjects.map((p) => ({
   id: p.id,
-  title: p.name,
+  title: p.title || p.name,
   description: p.description,
-  tags: [p.language, ...(p.topics || [])].filter(Boolean),
-  status: p.archived ? "archived" : p.category === "flagship" ? "shipped" : "in-progress",
-  year: p.createdAt ? new Date(p.createdAt).getFullYear().toString() : "2024",
+  tags: p.tags || [p.language].filter(Boolean),
+  status: p.status === "flagship" ? "shipped" : p.status,
+  year: "2024",
   stars: p.stars,
   forks: p.forks,
-  url: p.htmlUrl,
-  homepage: p.homepageUrl || undefined,
-  featured: p.category === "flagship",
-  highlight: p.name === "portofolio",
+  url: p.url,
+  homepage: p.homepage,
+  featured: p.featured,
+  highlight: p.highlight,
 }))
 
 const filters = ["all", "shipped", "in-progress", "archived"]

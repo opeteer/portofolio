@@ -247,3 +247,6 @@ export const realProjects: ProjectItem[] = [
     featured: false,
   }
 ]
+
+export const portfolioProjects = realProjects
+
